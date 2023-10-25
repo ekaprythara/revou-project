@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RevoU</title>
+    <link rel="stylesheet" href="./index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="navbar">
+      <img class="navbar__logo" src="./assets/logo.svg" alt="Logo" />
+      <div class="navbar__nav">
+        <a class="navbar__link navbar__link--active" href="./index.html">
+          Home
+        </a>
+        <a class="navbar__link" href="./profile.html">My Profile</a>
+      </div>
+    </nav>
+    <header>
+      <h1 class="title"></h1>
+    </header>
+    <main>
+      <section class="hero">
+        <p class="hero__description">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita ex
+          atque quibusdam nesciunt ullam eaque eum delectus id culpa nostrum rem
+          eos nemo quis illo ipsa eveniet deserunt, soluta aliquid. Ab aut, enim
+          cumque quae quaerat nulla iusto mollitia dolor provident unde,
+          numquam, odio laborum itaque rerum quasi maxime? Veritatis officia
+          sint sed, perspiciatis nobis nisi provident iure praesentium at?
+        </p>
+        <img
+          class="hero__picture"
+          src="https://static.pexels.com/photos/158471/ibis-bird-red-animals-158471.jpeg"
+          alt="Ibis bird red animals"
+        />
+      </section>
+      <hr />
+      <section class="headquarter">
+        <h1>Our Headquarter</h1>
+        <div class="headquarter__cities">
+          <div class="headquarter__city">
+            <img
+              class="headquarter__picture"
+              src="./assets/headquarters/jakarta.jpg"
+              alt="Jakarta"
+            />
+            <p class="headquarter__description">Jakarta</p>
+          </div>
+          <div class="headquarter__city">
+            <img
+              class="headquarter__picture"
+              src="./assets/headquarters/sumatera.jpg"
+              alt="Sumatera"
+            />
+            <p class="headquarter__description">Sumatera</p>
+          </div>
+          <div class="headquarter__city">
+            <img
+              class="headquarter__picture"
+              src="./assets/headquarters/bali.jpg"
+              alt="Bali"
+            />
+            <p class="headquarter__description">Bali</p>
+          </div>
+        </div>
+      </section>
+      <hr />
+      <section class="message">
+        <h1>Message Us</h1>
+        <div class="message__form">
+          <form
+            class="message__input"
+            name="message-form"
+            onSubmit="return validateForm()"
+          >
+            <div class="message__form-group">
+              <label class="message__label" for="name">Nama</label>
+              <input
+                class="message__form-control"
+                type="text"
+                id="name"
+                placeholder="Nama"
+                name="name"
+              />
+            </div>
+            <div class="message__form-group">
+              <label class="message__label" for="birthdate"
+                >Tanggal Lahir</label
+              >
+              <input
+                class="message__form-control"
+                type="date"
+                id="birthdate"
+                min="1990-01-01"
+                name="birthdate"
+              />
+            </div>
+            <div class="message__form-group">
+              <p class="message__label">Jenis Kelamin</p>
+              <div class="message__gender">
+                <input type="radio" id="male" name="gender" value="Laki-laki" />
+                <label for="male">Laki-laki</label>
+                <input
+                  type="radio"
+                  id="female"
+                  name="gender"
+                  value="Perempuan"
+                />
+                <label for="female">Perempuan</label>
+              </div>
+            </div>
+            <div class="message__form-group">
+              <label class="message__label" for="message">Pesan</label>
+              <textarea
+                id="message"
+                cols="32"
+                rows="10"
+                placeholder="Pesan"
+                name="message"
+              ></textarea>
+            </div>
+            <button class="message__submit" type="submit">Submit</button>
+          </form>
+          <div class="message__output">
+            <div>
+              <span class="message__title">Nama</span
+              ><span class="message__tab">:</span><span id="output-name"></span>
+            </div>
+            <div>
+              <span class="message__title">Tanggal Lahir</span
+              ><span class="message__tab">:</span
+              ><span id="output-birthdate"></span>
+            </div>
+            <div>
+              <span class="message__title">Jenis Kelamin</span
+              ><span class="message__tab">:</span
+              ><span id="output-gender"></span>
+            </div>
+            <div>
+              <span class="message__title">Pesan</span
+              ><span class="message__tab">:</span
+              ><span id="output-message"></span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p>
+        Made with <span style="color: red">&hearts;</span> by Eka Priyanthara
+      </p>
+    </footer>
+
+    <script type="text/javascript"></script>
+
+    <script>
+      const name = prompt("Siapa nama Anda?", "Anonymous");
+      document.querySelector(".title").innerHTML = "Selamat datang, " + name;
+
+      const validateForm = () => {
+        const name = document.forms["message-form"]["name"].value;
+        const birthDate = document.forms["message-form"]["birthdate"].value;
+        const gender = document.forms["message-form"]["gender"].value;
+        const message = document.forms["message-form"]["message"].value;
+
+        if (name == "" || birthDate == "" || gender == "" || message == "") {
+          alert("Form input tidak boleh kosong.");
+          return false;
+        }
+
+        setOutput(name, birthDate, gender, message);
+
+        document.forms["message-form"]["name"].value = "";
+        document.forms["message-form"]["birthdate"].value = "";
+        document.querySelector('input[name="gender"]:checked').checked = false;
+        document.forms["message-form"]["message"].value = "";
+
+        return false;
+      };
+
+      const setOutput = (name, birthDate, gender, message) => {
+        document.getElementById("output-name").innerHTML = name;
+        document.getElementById("output-birthdate").innerHTML = birthDate;
+        document.getElementById("output-gender").innerHTML = gender;
+        document.getElementById("output-message").innerHTML = message;
+      };
+    </script>
+  </body>
+</html>

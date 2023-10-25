@@ -1,0 +1,259 @@
+html {
+  background-color: white;
+  font-family: "Poppins", sans-serif;
+  font-size: small;
+}
+
+body {
+  width: 75%;
+  margin: auto;
+  background-color: lightblue;
+}
+
+h1 {
+  margin: 10px 0px;
+}
+
+section {
+  padding: 0px 20px;
+}
+
+h1 {
+  margin: 10px 0px;
+}
+
+hr {
+  margin: 0px 20px;
+  border: 1px solid black;
+}
+
+.title {
+  padding: 0px 20px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #537fe7;
+  position: sticky;
+  top: 0;
+}
+
+.navbar__logo {
+  width: 65px;
+  height: 65px;
+}
+
+.navbar__nav {
+  display: flex;
+  gap: 20px;
+}
+
+.navbar__link {
+  font-size: medium;
+  font-weight: bold;
+  text-decoration: none;
+  color: black;
+}
+
+.navbar__link:hover {
+  color: lightgray;
+}
+
+.navbar__link--active {
+  color: white;
+}
+
+.hero__description {
+  text-align: justify;
+}
+
+.hero__picture {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.headquarter__cities {
+  display: flex;
+  justify-content: space-around;
+}
+
+.headquarter__city {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.headquarter__picture {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+.headquarter__description {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.message__form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+.message__input {
+  grid-column-start: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.message__form-group {
+  display: flex;
+  flex-direction: row;
+  gap: 2px;
+  width: 100%;
+}
+
+.message__form-group > .message__gender {
+  width: 100%;
+  font-weight: bold;
+}
+
+.message__form-group > input {
+  margin-left: 5px;
+}
+
+.message__form-group > textarea {
+  resize: none;
+  width: 100%;
+  margin-left: 5px;
+}
+
+.message__submit {
+  margin-top: 10px;
+  width: 100%;
+  font-weight: bold;
+}
+
+.message__label {
+  float: left;
+  width: 140px;
+  margin: 0px;
+  font-weight: bold;
+}
+
+.message__form-control {
+  width: 100%;
+}
+
+.message__output {
+  grid-column-start: 2;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.message__title {
+  float: left;
+  width: 100px;
+}
+
+.message__tab {
+  margin-left: 5px;
+}
+
+.message__title,
+.message__tab {
+  font-weight: bold;
+}
+
+#output-name,
+#output-birthdate,
+#output-gender,
+#output-message {
+  margin-left: 5px;
+  font-weight: bold;
+}
+
+footer {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  height: 60px;
+  padding: 15px;
+  background-color: #537fe7;
+  font-size: 15px;
+}
+
+@media screen and (max-width: 900px) {
+  .navbar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #537fe7;
+    position: sticky;
+    top: 0;
+    gap: 10px;
+  }
+
+  .headquarter__cities {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .message__form {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 0.7fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+  }
+
+  .message__input {
+    grid-column-start: unset;
+    grid-row-start: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .message__output {
+    grid-column-start: unset;
+    grid-row-start: 2;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    padding: 15px;
+    background-color: #537fe7;
+    font-size: 15px;
+  }
+}
